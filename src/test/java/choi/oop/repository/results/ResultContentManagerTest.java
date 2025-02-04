@@ -2,16 +2,16 @@ package choi.oop.repository.results;
 
 import choi.oop.model.support.ResultContentType;
 import choi.oop.repository.results.contents.ResultContentRepository;
-import choi.oop.repository.results.manager.ResultContentContainerV2;
 import choi.oop.repository.results.manager.ResultContentManager;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ResultContentManagerTest {
 
-    ResultContentManager repositoryHandler = new ResultContentContainerV2();
+    @Autowired ResultContentManager repositoryHandler;
 
     @Test
     @DisplayName("get repository instance by ResultContentType")
