@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 @Repository
-public class ResultContentConverter implements ResultContentManager {
+public class ResultContentConverterV1 implements ResultContentManager {
 
     private final ResultContentMapperHandler mapperHandler = new ResultContentMapperHandler();
 
