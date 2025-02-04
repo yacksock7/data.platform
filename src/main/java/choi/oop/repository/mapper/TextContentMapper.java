@@ -1,9 +1,8 @@
 package choi.oop.repository.mapper;
 
-import choi.oop.model.results.Result;
 import choi.oop.model.results.contents.TextContent;
 
-public interface TextContentMapper {
+public interface TextContentMapper extends ResultContentMapper {
 
     void insert(TextContent content);
 

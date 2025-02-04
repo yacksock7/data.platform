@@ -2,7 +2,7 @@ package choi.oop.repository.mapper;
 
 import choi.oop.model.results.contents.FileContent;
 
-public interface FileContentMapper {
+public interface FileContentMapper extends ResultContentMapper {
 
     void insert(FileContent content);
 

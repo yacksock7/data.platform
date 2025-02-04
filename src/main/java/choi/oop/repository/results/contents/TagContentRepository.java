@@ -4,8 +4,10 @@ import choi.oop.exception.ErrorCode;
 import choi.oop.exception.OopServerException;
 import choi.oop.model.results.contents.ResultContent;
 import choi.oop.model.results.contents.TagContent;
+import choi.oop.repository.mapper.ResultContentMapper;
 import choi.oop.repository.mapper.TagContentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -14,8 +16,8 @@ public class TagContentRepository implements ResultContentRepository {
     private TagContentMapper mapper;
 
     @Autowired
-    public TagContentRepository(TagContentMapper mapper) {
-        this.mapper = mapper;
+    public TagContentRepository(@Qualifier("TAG") ResultContentMapper mapper) {
+        this.mapper = (TagContentMapper) mapper;
     };
 
     @Override

@@ -2,7 +2,7 @@ package choi.oop.repository.mapper;
 
 import choi.oop.model.results.contents.TagContent;
 
-public interface TagContentMapper {
+public interface TagContentMapper extends ResultContentMapper {
 
     void insert(TagContent content);
 

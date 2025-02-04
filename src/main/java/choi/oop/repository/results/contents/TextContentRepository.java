@@ -4,8 +4,10 @@ import choi.oop.exception.ErrorCode;
 import choi.oop.exception.OopServerException;
 import choi.oop.model.results.contents.ResultContent;
 import choi.oop.model.results.contents.TextContent;
+import choi.oop.repository.mapper.ResultContentMapper;
 import choi.oop.repository.mapper.TextContentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -14,8 +16,8 @@ public class TextContentRepository implements ResultContentRepository {
     private TextContentMapper mapper;
 
     @Autowired
-    public TextContentRepository(TextContentMapper mapper) {
-        this.mapper = mapper;
+    public TextContentRepository(@Qualifier("TEXT") ResultContentMapper mapper) {
+        this.mapper = (TextContentMapper) mapper;
     };
 
     @Override

@@ -2,7 +2,7 @@ package choi.oop.service;
 
 import choi.oop.model.results.contents.ResultContent;
 import choi.oop.model.support.ResultContentType;
-import choi.oop.repository.results.ResultContentManager;
+import choi.oop.repository.results.manager.ResultContentManager;
 import choi.oop.repository.results.contents.ResultContentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
