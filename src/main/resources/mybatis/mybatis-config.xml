@@ -8,11 +8,22 @@
     </settings>
 
     <typeAliases>
+        <typeAlias type="choi.oop.repository.typehandler.BooleanYnTypeHandler" alias="BooleanYnTypeHandler" />
+
+        <typeAlias type="choi.oop.model.Work" alias="Work" />
+
+        <typeAlias type="choi.oop.model.templates.Template" alias="Template" />
+        <typeAlias type="choi.oop.model.templates.TemplateStep" alias="TemplateStep" />
+
     </typeAliases>
 
     <typeHandlers>
+        <typeHandler handler="choi.oop.repository.typehandler.BooleanYnTypeHandler" javaType="Boolean" />
     </typeHandlers>
 
     <mappers>
+        <mapper resource="mybatis/mapper/mariadb/WorkMapper.xml" />
+        <mapper resource="mybatis/mapper/mariadb/TemplateMapper.xml" />
+        <mapper resource="mybatis/mapper/mariadb/TemplateStepMapper.xml" />
     </mappers>
 </configuration>
