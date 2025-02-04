@@ -7,28 +7,29 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class MemoryTextContentMapper implements TextContentMapper {
 
-    private Map<Long, TextContent> resultMap = new HashMap<>();
+    private Map<Long, TextContent> resultMap = new ConcurrentHashMap<>();
 
-    public void insert(TextContent content){
+    public synchronized void insert(TextContent content){
         content.setCreatedDatetime(LocalDateTime.now());
         content.setUpdatedDatetime(LocalDateTime.now());
         resultMap.put(content.getResultId(), content);
     }
 
-    public TextContent select(Long resultId) {
+    public synchronized TextContent select(Long resultId) {
         return resultMap.get(resultId);
     }
 
-    public void update(TextContent content) {
+    public synchronized void update(TextContent content) {
         content.setUpdatedDatetime(LocalDateTime.now());
         resultMap.put(content.getResultId(), content);
     }
 
-    public void delete(Long resultId) {
+    public synchronized void delete(Long resultId) {
         resultMap.remove(resultId);
     }
 }

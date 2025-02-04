@@ -5,30 +5,30 @@ import choi.oop.repository.mapper.FileContentMapper;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class MemoryFileContentMapper implements FileContentMapper {
 
-    private Map<Long, FileContent> resultMap = new HashMap<>();
+    private Map<Long, FileContent> resultMap = new ConcurrentHashMap<>();
 
-    public void insert(FileContent content) {
+    public synchronized void insert(FileContent content) {
         content.setCreatedDatetime(LocalDateTime.now());
         content.setUpdatedDatetime(LocalDateTime.now());
         resultMap.put(content.getResultId(), content);
     }
 
-    public FileContent select(Long resultId) {
+    public synchronized FileContent select(Long resultId) {
         return resultMap.get(resultId);
     }
 
-    public void update(FileContent content) {
+    public synchronized void update(FileContent content) {
         content.setUpdatedDatetime(LocalDateTime.now());
         resultMap.put(content.getResultId(), content);
     }
 
-    public void delete(Long resultId) {
+    public synchronized void delete(Long resultId) {
         resultMap.remove(resultId);
     }
 }
