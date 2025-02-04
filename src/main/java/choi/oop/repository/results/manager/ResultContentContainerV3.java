@@ -1,10 +1,9 @@
 package choi.oop.repository.results.manager;
 
-import choi.oop.exception.ErrorCode;
-import choi.oop.exception.OopServerException;
 import choi.oop.model.support.ResultContentType;
 import choi.oop.repository.mapper.ResultContentMapper;
 import choi.oop.repository.mapper.handler.ResultContentMapperHandler;
+import choi.oop.repository.results.contents.DefaultRepository;
 import choi.oop.repository.results.contents.ResultContentRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,38 +14,28 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ResultContentContainerV2 implements ResultContentManager {
+@Repository
+public class ResultContentContainerV3 implements ResultContentManager {
 
     /**
-     * 기존 ResultContentConverterV1에 문제들을 개선하였다.
+     * 기존 ResultContentContainerV2에 Null Object pattern을 적용하여 코드를 간결히하였다.
      *
-     * Request가 발생할때마다 instance를 조회하여 호출하면, O(n)의 성능으로
-     * 추후에 ResultContentRepository의 구현체가 다양해지변 성능이 나빠지는 기술부체였다.
-     *
-     * 2가지 방법으로 수정하였다.
-     * 1. repository instance의 초기화 시점을 어플리케이션이 실행될시점으로 수정하였다.
-     * 2. Map을 이용하여 key, value 형식으로 instance를 관리하는 Command Pattern을 적용하였다.
-     *
-     * 결론적으로, O(n)이었던 성능을 O(1)로 개선할 수 있었다.
+     * DefaultRepository로 ResultContentType의 Unmatching case를 포워딩하였다.
+     * getRepository() 메서드 내에서 Map class에서 제공하는 getOrDefault(); 메서드와 접목하니 코드의 가독성이 올라갔다.
      */
 
     private final Map<ResultContentType, ResultContentRepository> repositories = new HashMap<>();
+    private final ResultContentRepository defaultRepository = new DefaultRepository();
     private final ResultContentMapperHandler mapperHandler = new ResultContentMapperHandler();
     private final String PREFIX = "choi.oop.repository.results.contents";
     private final String SUBFIX = "ContentRepository";
 
-    public ResultContentContainerV2() {
+    public ResultContentContainerV3() {
         initRepositories();
     }
 
     public ResultContentRepository getRepository(ResultContentType type) {
-
-        ResultContentRepository repository = repositories.get(type);
-        if (repository != null) {
-            return repository;
-        } else {
-            throw new OopServerException(ErrorCode.UnmatchedType, "Can not found ResultContentRepository by ResultContentType. type="+type);
-        }
+        return repositories.getOrDefault(type, defaultRepository);
     }
 
     private void initRepositories() {
