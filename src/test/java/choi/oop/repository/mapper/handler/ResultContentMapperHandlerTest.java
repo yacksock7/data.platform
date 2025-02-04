@@ -4,11 +4,9 @@ import choi.oop.model.support.ResultContentType;
 import choi.oop.repository.mapper.memorydb.MemoryTextContentMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
 class ResultContentMapperHandlerTest {
 
     private ResultContentMapperHandler mapperHandler = new ResultContentMapperHandler();

@@ -4,12 +4,10 @@ import choi.oop.model.support.ResultContentType;
 import choi.oop.repository.mapper.ResultContentMapper;
 import choi.oop.repository.mapper.handler.ResultContentMapperHandler;
 import choi.oop.repository.results.contents.ResultContentRepository;
-import org.springframework.stereotype.Repository;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-@Repository
 public class ResultContentConverterV1 implements ResultContentManager {
 
     private final ResultContentMapperHandler mapperHandler = new ResultContentMapperHandler();
