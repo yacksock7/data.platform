@@ -1,7 +1,7 @@
 package choi.oop.repository;
 
 import choi.oop.model.Work;
-import choi.oop.repository.mapper.WorkMapper;
+import choi.oop.repository.mapper.mybatis.WorkMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 @AllArgsConstructor
 public class WorkRepository {
     private final WorkMapper mapper;
+
     public void insert(Work work) {
         mapper.insert(work);
     };

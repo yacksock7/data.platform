@@ -1,4 +1,4 @@
-package choi.oop.repository.mapper;
+package choi.oop.repository.mapper.mybatis;
 
 import choi.oop.model.templates.TemplateStep;
 import org.apache.ibatis.annotations.Mapper;

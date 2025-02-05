@@ -1,4 +1,4 @@
-package choi.oop.model.typehandler;
+package choi.oop.repository.typehandler;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

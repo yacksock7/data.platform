@@ -1,7 +1,7 @@
 package choi.oop.repository.templates;
 
 import choi.oop.model.templates.TemplateStep;
-import choi.oop.repository.mapper.TemplateStepMapper;
+import choi.oop.repository.mapper.mybatis.TemplateStepMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

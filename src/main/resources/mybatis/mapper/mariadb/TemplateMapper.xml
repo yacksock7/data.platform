@@ -1,7 +1,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="choi.oop.repository.mapper.TemplateMapper">
+<mapper namespace="choi.oop.repository.mapper.mybatis.TemplateMapper">
     <resultMap id="TemplateResultMap" type="Template">
         <id     property="id"                   column="id" />
         <result property="userId"               column="user_id" />
