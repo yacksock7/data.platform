@@ -8,12 +8,26 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class UploadStep implements StepModule {
+
     @Override
-    public void execute(StepModel model) {
+    public void execute(StepModel stepModel) {
         // Upload service logic...
+        final UploadModel uploadModel = (UploadModel) stepModel;
+        System.out.println("UploadStep.execute");
+
+        // create job
+        // create jobStep
+        // create jobStepTask
+        // create jobStepTaskResult
+
+        // create cloudObjects
+        // create jobStepTaskResultFile
+        // modify jobStepTask
     }
 
-    private UploadModel convert(StepModel model) {
-        return (UploadModel) model;
+    private void after() {
+        // create next jobStep
+        // create next jobStepTask
+        // 후처리 Machine 이면 실행
     }
 }

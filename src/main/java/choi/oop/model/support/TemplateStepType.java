@@ -6,7 +6,4 @@ public enum TemplateStepType {
     EDITING,
     INSPECT,
     EXPORT
-
-//    LABELING,
-//    RECORDING,
 }

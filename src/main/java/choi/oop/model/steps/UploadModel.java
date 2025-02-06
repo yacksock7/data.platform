@@ -9,15 +9,15 @@ import java.util.List;
 public class UploadModel extends StepModel {
     private Long userId;
     private Long workId;
-    private Long workTemplateId;
-    private Integer workTemplateStepNum;
+    private Long templateId;
+    private Integer templateStepNum;
     private List<MultipartFile> files;
 
-    public UploadModel(Long userId, Long workId, Long workTemplateId, Integer workTemplateStepNum, List<MultipartFile> files) {
+    public UploadModel(Long userId, Long workId, Long templateId, Integer templateStepNum, List<MultipartFile> files) {
         this.userId = userId;
         this.workId = workId;
-        this.workTemplateId = workTemplateId;
-        this.workTemplateStepNum = workTemplateStepNum;
+        this.templateId = templateId;
+        this.templateStepNum = templateStepNum;
         this.files = files;
     }
 }

@@ -7,10 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SplitStep implements StepModule {
     @Override
-    public void execute(StepModel model) {
+    public void execute(StepModel stepModel) {
         // SplitStep service logic...
+        final SplitModel splitModel = (SplitModel) stepModel;
+        System.out.println("SplitStep.execute");
     }
-
 
     private SplitModel convert(StepModel model) {
         return null;

@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MachineStep implements StepModule {
     @Override
-    public void execute(StepModel model) {
+    public void execute(StepModel stepModel) {
         // MachineStep service logic...
+        final MachineModel machineModel = (MachineModel) stepModel;
+        System.out.println("MachineStep.execute");
     }
 
     private MachineModel convert(StepModel model) {

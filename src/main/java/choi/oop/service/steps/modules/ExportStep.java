@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExportStep implements StepModule {
     @Override
-    public void execute(StepModel model) {
+    public void execute(StepModel stepModel) {
         // ExportStep service logic...
+        final ExportModel exportModel = (ExportModel) stepModel;
+        System.out.println("ExportStep.execute");
     }
 
     private ExportModel convert(StepModel model) {
