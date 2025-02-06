@@ -12,8 +12,4 @@ public class SplitStep implements StepModule {
         final SplitModel splitModel = (SplitModel) stepModel;
         System.out.println("SplitStep.execute");
     }
-
-    private SplitModel convert(StepModel model) {
-        return null;
-    }
 }

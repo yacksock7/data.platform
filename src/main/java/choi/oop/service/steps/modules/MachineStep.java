@@ -12,8 +12,4 @@ public class MachineStep implements StepModule {
         final MachineModel machineModel = (MachineModel) stepModel;
         System.out.println("MachineStep.execute");
     }
-
-    private MachineModel convert(StepModel model) {
-        return null;
-    }
 }

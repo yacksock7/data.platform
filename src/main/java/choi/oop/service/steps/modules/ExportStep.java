@@ -12,8 +12,4 @@ public class ExportStep implements StepModule {
         final ExportModel exportModel = (ExportModel) stepModel;
         System.out.println("ExportStep.execute");
     }
-
-    private ExportModel convert(StepModel model) {
-        return null;
-    }
 }

@@ -12,8 +12,4 @@ public class EditingStep implements StepModule {
         final EditingModel editingModel = (EditingModel) stepModel;
         System.out.println("EditingStep.execute");
     }
-
-    private EditingModel convert(StepModel model) {
-        return null;
-    }
 }

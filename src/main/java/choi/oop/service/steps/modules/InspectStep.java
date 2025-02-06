@@ -12,8 +12,4 @@ public class InspectStep implements StepModule {
         final InspectModel inspectModel = (InspectModel) stepModel;
         System.out.println("InspectStep.execute");
     }
-
-    private InspectModel convert(StepModel model) {
-        return null;
-    }
 }
