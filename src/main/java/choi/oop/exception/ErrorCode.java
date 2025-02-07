@@ -5,5 +5,7 @@ public enum ErrorCode {
 
     UnmatchedType,
 
+    FailedVerification,
+
     Unknown
 }
