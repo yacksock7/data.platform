@@ -11,5 +11,9 @@ public class InspectStep implements StepModule {
         // InspectStep service logic...
         final InspectModel inspectModel = (InspectModel) stepModel;
         System.out.println("InspectStep.execute");
+
+        // 1. modify status to  PROCESS by jobStepTask
+        // 2. create Result without ResultContent
+        // 3. modify status to COMPLETE by jobStepTask
     }
 }

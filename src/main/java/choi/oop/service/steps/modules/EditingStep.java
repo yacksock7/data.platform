@@ -11,5 +11,9 @@ public class EditingStep implements StepModule {
         // EditingStep service logic...
         final EditingModel editingModel = (EditingModel) stepModel;
         System.out.println("EditingStep.execute");
+
+        // 1. modify status to  PROCESS by jobStepTask
+        // 2. create Result with ResultContent
+        // 3. modify status to COMPLETE by jobStepTask
     }
 }

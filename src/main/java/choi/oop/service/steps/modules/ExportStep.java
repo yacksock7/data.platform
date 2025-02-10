@@ -11,5 +11,9 @@ public class ExportStep implements StepModule {
         // ExportStep service logic...
         final ExportModel exportModel = (ExportModel) stepModel;
         System.out.println("ExportStep.execute");
+
+        // 1. modify status to  PROCESS by jobStepTask
+        // 2. export
+        // 3. modify status to COMPLETE by jobStepTask
     }
 }

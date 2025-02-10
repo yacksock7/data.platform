@@ -11,5 +11,9 @@ public class SplitStep implements StepModule {
         // SplitStep service logic...
         final SplitModel splitModel = (SplitModel) stepModel;
         System.out.println("SplitStep.execute");
+
+        // 1. modify status to  PROCESS by jobStepTask
+        // 2. create Result with ResultContent
+        // 3. modify status to COMPLETE by jobStepTask
     }
 }
