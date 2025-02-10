@@ -12,9 +12,13 @@ public class InspectStep implements StepModule {
         final InspectModel inspectModel = (InspectModel) stepModel;
         System.out.println("InspectStep.execute");
 
+        // TODO 전처리 business logic
         // 1. modify status to  PROCESS by jobStepTask
-        // 2. create Result without ResultContent
 
+        // TODO TranslateStep main logic
+        // 2. EMPTY
+
+        // TODO 후처리 business logic
         // 3. modify status to COMPLETE by jobStepTask
         // 4. create next jobStepTask with WAIT status
         // 5. check next jobStep is TranslateStep or SplitStep

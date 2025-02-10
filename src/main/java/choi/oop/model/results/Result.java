@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Result {
     private Long id;
 //    private Long jobId;
