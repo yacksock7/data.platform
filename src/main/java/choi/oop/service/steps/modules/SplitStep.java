@@ -14,6 +14,9 @@ public class SplitStep implements StepModule {
 
         // 1. modify status to  PROCESS by jobStepTask
         // 2. create Result with ResultContent
+
         // 3. modify status to COMPLETE by jobStepTask
+        // 4. create next jobStepTask with WAIT status
+        // 5. check next jobStep is TranslateStep or SplitStep
     }
 }

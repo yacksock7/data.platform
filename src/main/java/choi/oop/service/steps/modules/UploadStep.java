@@ -23,7 +23,9 @@ public class UploadStep implements StepModule {
         // create cloudObjects
         // create jobStepTaskResultFile
 
-        // modify jobStepTask
+        // modify status to COMPLETE by jobStepTask
+        // create next jobStepTask with WAIT status
+        // check next jobStep is TranslateStep or SplitStep
     }
 
     private void after() {

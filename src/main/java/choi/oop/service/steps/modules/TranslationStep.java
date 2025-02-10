@@ -18,5 +18,7 @@ public class TranslationStep implements StepModule {
         // 3. create Result with ResultContent
 
         // 4. modify status to COMPLETE by jobStepTask
+        // 5. create next jobStepTask with WAIT status
+        // 6. check next jobStep is TranslateStep or SplitStep
     }
 }
