@@ -8,6 +8,6 @@ public class DefaultModule implements StepModule {
 
     @Override
     public void execute(StepModel model) {
-        throw new OopServerException(ErrorCode.UnmatchedType, "");
+        throw new OopServerException(ErrorCode.UnmatchedType, "Unmatched StepModule instance by TemplateStepType. (hint: StepModule info="+model+")");
     }
 }

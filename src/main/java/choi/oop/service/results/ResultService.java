@@ -1,13 +1,13 @@
-package choi.oop.service;
+package choi.oop.service.results;
 
 import choi.oop.exception.ErrorCode;
 import choi.oop.exception.OopAuthException;
+import choi.oop.exception.OopServerException;
 import choi.oop.model.results.Result;
 import choi.oop.model.results.contents.ResultContent;
 import choi.oop.repository.results.ResultRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -26,7 +26,7 @@ public class ResultService {
         resultContentService.create(result.getContentType(), result.getContent());
     }
 
-    public Result get(Long resultId) throws OopAuthException {
+    public Result get(Long resultId) {
         log.trace("get Start... resultId={}", resultId);
         final Result result = resultRepository.select(resultId);
         if (result != null) {
@@ -35,7 +35,7 @@ public class ResultService {
                     .content(content)
                     .build();
         } else {
-            throw new OopAuthException(ErrorCode.NotFound, "Can not found Result by resultId. resultId=" + resultId);
+            throw new OopServerException(ErrorCode.NotFound, "Can not found Result by resultId. resultId=" + resultId);
         }
     }
 

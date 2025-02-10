@@ -10,6 +10,8 @@ import choi.oop.model.results.contents.TagContent;
 import choi.oop.model.results.contents.TextContent;
 import choi.oop.model.support.FileType;
 import choi.oop.model.support.ResultContentType;
+import choi.oop.service.results.ResultContentService;
+import choi.oop.service.results.ResultService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 class ResultServiceTest {
 
-    @Autowired ResultService resultService;
-    @Autowired ResultContentService resultContentService;
+    @Autowired
+    ResultService resultService;
+    @Autowired
+    ResultContentService resultContentService;
 
     @Test
     @DisplayName("create Result by TextContent O")

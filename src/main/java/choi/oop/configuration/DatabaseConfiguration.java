@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan(value = "kr.onthelive.basic.ws.repository.mapper")
+@MapperScan(value = "choi.oop.repository.mapper.mybatis")
 public class DatabaseConfiguration {
     private static final Logger logger = LoggerFactory.getLogger(DatabaseConfiguration.class);
     private static final String DB_URL_ENV_KEY = "DB_URL";

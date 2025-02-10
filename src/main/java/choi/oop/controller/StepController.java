@@ -20,10 +20,10 @@ public class StepController {
         stepModuleService.execute(templateStepType, model);
     }
 
-    @PostMapping(value = "/steps/tasks", params = "templateStepType=MACHINE")
+    @PostMapping(value = "/steps/tasks", params = "templateStepType=TRANSLATION")
     public void execute(HttpServletRequest request,
                         @RequestParam TemplateStepType templateStepType,
-                        @RequestBody MachineModel model) {
+                        @RequestBody TranslationModel model) {
         stepModuleService.execute(templateStepType, model);
     }
 

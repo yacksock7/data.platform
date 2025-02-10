@@ -2,7 +2,7 @@ package choi.oop.model.support;
 
 public enum TemplateStepType {
     UPLOAD,
-    MACHINE,
+    TRANSLATION,
     EDITING,
     INSPECT,
     EXPORT

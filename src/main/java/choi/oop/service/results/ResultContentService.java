@@ -1,4 +1,4 @@
-package choi.oop.service;
+package choi.oop.service.results;
 
 import choi.oop.model.results.contents.ResultContent;
 import choi.oop.model.support.ResultContentType;
